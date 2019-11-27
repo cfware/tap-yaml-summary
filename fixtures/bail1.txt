@@ -1,0 +1,4 @@
+TAP version 13
+# Subtest: bail
+    Bail out! bail
+Bail out! bail

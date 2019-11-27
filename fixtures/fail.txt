@@ -1,0 +1,234 @@
+TAP version 13
+# Subtest: fail 1
+    not ok 1 - hello 1
+      ---
+      at:
+        line: 7
+        column: 4
+        file: fail.js
+        type: Test
+      stack: |
+        Test.<anonymous> (fail.js:7:4)
+        Object.<anonymous> (fail.js:6:3)
+      source: |
+        t.test('fail 1', async t => {
+        	t.fail('hello 1');
+        ---^
+        });
+      ...
+    
+    1..1
+    # failed 1 test
+not ok 1 - fail 1 # time=18.685ms
+
+# Subtest: fail 2
+    not ok 1 - (unnamed test)
+      ---
+      stack: |
+        Object.<anonymous> (fail.js:10:3)
+      error: hello 2
+      tapCaught: returnedPromiseRejection
+      test: fail 2
+      at:
+        line: 10
+        column: 3
+        file: fail.js
+        function: Object.<anonymous>
+      source: |
+      
+        t.test('fail 2', async () => {
+        --^
+        	throw 'hello 2';
+        });
+      ...
+    
+    1..1
+    # failed 1 test
+not ok 2 - fail 2 # time=3.354ms
+
+# Subtest: fail 3
+    not ok 1 - hello 3
+      ---
+      stack: |
+        Test.<anonymous> (fail.js:15:8)
+      at:
+        line: 15
+        column: 8
+        file: fail.js
+        function: Test.<anonymous>
+      tapCaught: returnedPromiseRejection
+      test: fail 3
+      source: |
+        t.test('fail 3', async () => {
+        	throw new Error('hello 3');
+        -------^
+        });
+      ...
+    
+    1..1
+    # failed 1 test
+not ok 3 - fail 3 # time=2.818ms
+
+# Subtest: fail 4
+    not ok 1 - hello 4
+      ---
+      stack: |
+        Test.<anonymous> (fail.js:19:8)
+      at:
+        line: 19
+        column: 8
+        file: fail.js
+        function: Test.<anonymous>
+      tapCaught: testFunctionThrow
+      test: fail 4
+      source: |
+        t.test('fail 4', () => {
+        	throw new Error('hello 4');
+        -------^
+        });
+      ...
+    
+    1..1
+    # failed 1 test
+not ok 4 - fail 4 # time=2.715ms
+
+# Subtest: fail a
+    # Subtest: fail a1
+        not ok 1 - hello a1
+          ---
+          at:
+            line: 24
+            column: 5
+            file: fail.js
+            type: Test
+          stack: |
+            Test.<anonymous> (fail.js:24:5)
+            Test.<anonymous> (fail.js:23:10)
+          source: |
+            	await t.test('fail a1', async t => {
+            		t.fail('hello a1');
+            ----^
+            	});
+            });
+          ...
+        
+        1..1
+        # failed 1 test
+    not ok 1 - fail a1 # time=4.487ms
+    
+    1..1
+    # failed 1 test
+not ok 5 - fail a # time=7.341ms
+
+# Subtest: fail b
+    # Subtest: fail b2
+        not ok 1 - (unnamed test)
+          ---
+          stack: |
+            Test.<anonymous> (fail.js:29:10)
+          error: hello b2
+          tapCaught: returnedPromiseRejection
+          test: fail b2
+          at:
+            line: 29
+            column: 10
+            file: fail.js
+            function: Test.<anonymous>
+          source: |
+            t.test('fail b', async t => {
+            	await t.test('fail b2', async () => {
+            ---------^
+            		throw 'hello b2';
+            	});
+          ...
+        
+        1..1
+        # failed 1 test
+    not ok 1 - fail b2 # time=3.117ms
+    
+    1..1
+    # failed 1 test
+not ok 6 - fail b # time=4.834ms
+
+# Subtest: fail c
+    # Subtest: fail c3
+        not ok 1 - hello c3
+          ---
+          stack: |
+            Test.<anonymous> (fail.js:36:9)
+          at:
+            line: 36
+            column: 9
+            file: fail.js
+            function: Test.<anonymous>
+          tapCaught: returnedPromiseRejection
+          test: fail c3
+          source: |
+            	await t.test('fail c3', async () => {
+            		throw new Error('hello c3');
+            --------^
+            	});
+            });
+          ...
+        
+        1..1
+        # failed 1 test
+    not ok 1 - fail c3 # time=3.265ms
+    
+    1..1
+    # failed 1 test
+not ok 7 - fail c # time=4.991ms
+
+# Subtest: fail d
+    1..1
+    # Subtest: fail d4
+        not ok 1 - hello d4
+          ---
+          stack: |
+            Test.<anonymous> (fail.js:44:9)
+          at:
+            line: 44
+            column: 9
+            file: fail.js
+            function: Test.<anonymous>
+          tapCaught: testFunctionThrow
+          test: fail d4
+          source: |
+            	t.test('fail d4', () => {
+            		throw new Error('hello d4');
+            --------^
+            	});
+            });
+          ...
+        
+        1..1
+        # failed 1 test
+    not ok 1 - fail d4 # time=3.514ms
+    
+    # failed 1 test
+not ok 8 - fail d # time=5.382ms
+
+# Subtest
+    not ok 1 - unnamed test
+      ---
+      at:
+        line: 49
+        column: 4
+        file: fail.js
+        type: Test
+      stack: |
+        Test.<anonymous> (fail.js:49:4)
+      source: |
+        t.test(async t => {
+        	t.fail('unnamed test');
+        ---^
+        });
+      ...
+    
+    1..1
+    # failed 1 test
+not ok 9 # time=2.583ms
+
+1..9
+# failed 9 of 9 tests
+# time=58.64ms

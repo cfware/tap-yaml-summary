@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: uncaught
+    ok 1 - expect truthy value
+    1..1
+ok 1 - uncaught # time=2.667ms
+
+not ok 2 - uncaught error
+  ---
+  at:
+    line: 10
+    column: 9
+    file: uncaught.js
+    function: Timeout._onTimeout
+  stack: |
+    Timeout._onTimeout (uncaught.js:10:9)
+  tapCaught: uncaughtException
+  test: TAP
+  source: |
+    	setTimeout(() => {
+    		throw new Error('uncaught error');
+    --------^
+    	}, 1);
+    });
+  ...
+
+1..2
+# failed 1 of 2 tests
+# time=15.732ms

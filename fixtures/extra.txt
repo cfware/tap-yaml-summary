@@ -1,0 +1,10 @@
+TAP version 13
+extra 1
+extra 2
+# Subtest: extra
+    ok 1 - (unnamed test)
+    1..1
+ok 1 - extra # time=2.883ms
+
+1..1
+# time=6.369ms

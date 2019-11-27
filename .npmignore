@@ -1,0 +1,8 @@
+*.tgz
+.travis.yml
+.nyc_output/
+coverage/
+fixtures/
+tap-snapshots/
+nyc.config.js
+test.js

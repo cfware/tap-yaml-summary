@@ -1,0 +1,38 @@
+{
+  "name": "tap-yaml-summary",
+  "version": "0.1.0",
+  "description": "Output a summary in YAML format from a TAP stream",
+  "main": "lib/runner.js",
+  "bin": "bin.js",
+  "scripts": {
+    "pretest": "xo",
+    "test": "nyc --silent=true node ./test.js | node ./bin.js",
+    "posttest": "nyc report --check-coverage=true",
+    "snap": "cross-env TAP_SNAPSHOT=1 npm test"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfware/tap-yaml-summary"
+  },
+  "author": "Corey Farrell <git@cfware.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cfware/tap-yaml-summary/issues"
+  },
+  "homepage": "https://npm.im/tap-yaml-summary",
+  "dependencies": {
+    "minipass": "^3.1.1",
+    "tap-parser": "^10.0.1",
+    "tap-yaml": "^1.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "libtap": "git://github.com/coreyfarrell/node-tap#libtap",
+    "nyc": "^15.0.0-beta.1",
+    "stack-utils": "^1.0.2",
+    "xo": "^0.25.3"
+  }
+}

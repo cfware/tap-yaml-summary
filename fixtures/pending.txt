@@ -1,0 +1,7 @@
+TAP version 13
+ok 1 - todo # TODO
+ok 2 - skip # SKIP
+1..2
+# todo: 1
+# skip: 1
+# time=3.148ms

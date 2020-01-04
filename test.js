@@ -23,7 +23,7 @@ function runSpawn(t, inputStream, expectStatus) {
 
 		proc.on('error', reject);
 		proc.on('close', status => {
-			t.is(status, expectStatus);
+			t.equal(status, expectStatus);
 			let stdoutStr = Buffer.concat(stdout).toString();
 			if (t.name.startsWith('bail')) {
 				// The tap bailout does not specify timing so it fluctuates.
@@ -31,7 +31,7 @@ function runSpawn(t, inputStream, expectStatus) {
 			}
 
 			t.matchSnapshot(stdoutStr, 'stdout');
-			t.is(Buffer.concat(stderr).toString(), '');
+			t.equal(Buffer.concat(stderr).toString(), '');
 
 			resolve();
 		});

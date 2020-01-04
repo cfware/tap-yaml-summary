@@ -1,16 +1,8 @@
 'use strict';
 
-const t = require('libtap');
-const StackUtils = require('stack-utils');
-
-let nodeInternals = [];
-try {
-	nodeInternals = StackUtils.nodeInternals();
-} catch (_) {
-}
+const settings = require('libtap/settings');
 
 /* Block stuff that might interfere with error snapshots */
-const ignore = [/node_modules/, /^\s*at internal\//];
-t.stackUtils = new StackUtils({internals: [].concat(nodeInternals, ignore)});
+settings.stackUtils.internals.push(/node_modules/, /^\s*at internal\//);
 
-module.exports = t;
+module.exports = require('libtap');

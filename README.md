@@ -27,11 +27,11 @@ This module works as a transform stream
 const Reporter = require('tap-yaml-summary');
 
 fs.createReadStream('saved-test-output.tap')
-  .pipe(new Reporter().on('failed', () => process.exit(1)))
+  .pipe(new Reporter().on('error', () => process.exit(1)))
   .pipe(process.stdout);
 ```
 
-The `failed` event is emitted on completion if any assertion failed or a bailout occurred.
+The `error` event is emitted on completion if any assertion failed or a bailout occurred.
 
 ## Attribution
 

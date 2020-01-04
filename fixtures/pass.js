@@ -12,8 +12,8 @@ t.test('pass 1', async t => {
 t.test('pass 2', async () => {});
 
 t.test('pass 3', async t => {
-	t.is(1, 1);
-	t.is(1, 1);
+	t.equal(1, 1);
+	t.equal(1, 1);
 });
 
 t.test('pass 4', async t => {

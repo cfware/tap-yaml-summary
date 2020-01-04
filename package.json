@@ -11,7 +11,7 @@
     "snap": "cross-env TAP_SNAPSHOT=1 npm test"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "repository": {
     "type": "git",
@@ -29,10 +29,10 @@
     "tap-yaml": "^1.0.0"
   },
   "devDependencies": {
+    "@cfware/nyc": "^0.6.0",
     "cross-env": "^6.0.3",
-    "libtap": "git://github.com/coreyfarrell/node-tap#libtap",
-    "nyc": "^15.0.0-beta.1",
-    "stack-utils": "^1.0.2",
+    "libtap": "^0.1.0",
+    "nyc": "^15.0.0",
     "xo": "^0.25.3"
   }
 }

@@ -3,5 +3,5 @@
 const Reporter = require('.');
 
 process.stdin
-	.pipe(new Reporter().on('failed', () => process.exit(1)))
+	.pipe(new Reporter().on('error', () => process.exit(1)))
 	.pipe(process.stdout);

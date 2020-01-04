@@ -12,7 +12,7 @@ class Suite {
 }
 
 // $1 = number, $2 = units
-const timere = /^#\s*time=((?:0|[1-9]\d*?)(?:\.\d+)?)(ms|s)?$/;
+const timere = /^#\s*time=(?<number>(?:0|[1-9]\d*?)(?:\.\d+)?)(?<units>ms|s)?$/;
 const cwd = path.join(process.cwd(), '/');
 
 class Runner extends MiniPass {
@@ -37,15 +37,15 @@ class Runner extends MiniPass {
 			this.report();
 			super.end();
 			if (!this.ok) {
-				this.emit('failed');
+				this.emit('error');
 			}
 		});
 
 		this.parser.on('comment', c => {
 			const tmatch = c.trim().match(timere);
 			if (tmatch) {
-				let t = Number(tmatch[1]);
-				if (tmatch[2] === 's') {
+				let t = Number(tmatch.groups.number);
+				if (tmatch.groups.units === 's') {
 					t *= 1000;
 				}
 

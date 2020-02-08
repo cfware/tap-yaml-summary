@@ -87,6 +87,7 @@ class Runner extends MiniPass {
 	}
 
 	write(...args) {
+		/* istanbul ignore else: timing sensitive */
 		if (!this.emittedStart) {
 			this.emittedStart = true;
 			this.stats.start = new Date();

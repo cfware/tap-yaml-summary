@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@cfware/nyc": "^0.6.0",
-    "cross-env": "^6.0.3",
-    "libtap": "^0.1.0",
+    "cross-env": "^7.0.0",
+    "libtap": "^0.2.0",
     "nyc": "^15.0.0",
     "xo": "^0.25.3"
   }

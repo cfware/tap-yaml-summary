@@ -4,6 +4,6 @@
 # Snapshots will become invalid due to this but easily reviewable in git diff.
 
 cd $(dirname $0)
-for i in $(find * -name '*.js' -exec basename {} .js \;|grep -ve libtap); do
-  node ${i}.js > ${i}.txt
+for i in $(find * -name '*.cjs' -exec basename {} .cjs \;|grep -ve libtap); do
+  node ${i}.cjs > ${i}.txt
 done

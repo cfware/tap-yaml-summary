@@ -5,11 +5,11 @@ TAP version 13
       at:
         line: 7
         column: 4
-        file: fail.js
+        file: fail.cjs
         type: Test
       stack: |
-        Test.<anonymous> (fail.js:7:4)
-        Object.<anonymous> (fail.js:6:3)
+        Test.<anonymous> (fail.cjs:7:4)
+        Object.<anonymous> (fail.cjs:6:3)
       source: |
         t.test('fail 1', async t => {
         	t.fail('hello 1');
@@ -19,20 +19,20 @@ TAP version 13
     
     1..1
     # failed 1 test
-not ok 1 - fail 1 # time=18.685ms
+not ok 1 - fail 1 # time=14.523ms
 
 # Subtest: fail 2
     not ok 1 - (unnamed test)
       ---
       stack: |
-        Object.<anonymous> (fail.js:10:3)
+        Object.<anonymous> (fail.cjs:10:3)
       error: hello 2
       tapCaught: returnedPromiseRejection
       test: fail 2
       at:
         line: 10
         column: 3
-        file: fail.js
+        file: fail.cjs
         function: Object.<anonymous>
       source: |
       
@@ -44,17 +44,17 @@ not ok 1 - fail 1 # time=18.685ms
     
     1..1
     # failed 1 test
-not ok 2 - fail 2 # time=3.354ms
+not ok 2 - fail 2 # time=3.02ms
 
 # Subtest: fail 3
     not ok 1 - hello 3
       ---
       stack: |
-        Test.<anonymous> (fail.js:15:8)
+        Test.<anonymous> (fail.cjs:15:8)
       at:
         line: 15
         column: 8
-        file: fail.js
+        file: fail.cjs
         function: Test.<anonymous>
       tapCaught: returnedPromiseRejection
       test: fail 3
@@ -67,17 +67,17 @@ not ok 2 - fail 2 # time=3.354ms
     
     1..1
     # failed 1 test
-not ok 3 - fail 3 # time=2.818ms
+not ok 3 - fail 3 # time=3.092ms
 
 # Subtest: fail 4
     not ok 1 - hello 4
       ---
       stack: |
-        Test.<anonymous> (fail.js:19:8)
+        Test.<anonymous> (fail.cjs:19:8)
       at:
         line: 19
         column: 8
-        file: fail.js
+        file: fail.cjs
         function: Test.<anonymous>
       tapCaught: testFunctionThrow
       test: fail 4
@@ -90,7 +90,7 @@ not ok 3 - fail 3 # time=2.818ms
     
     1..1
     # failed 1 test
-not ok 4 - fail 4 # time=2.715ms
+not ok 4 - fail 4 # time=2.103ms
 
 # Subtest: fail a
     # Subtest: fail a1
@@ -99,11 +99,11 @@ not ok 4 - fail 4 # time=2.715ms
           at:
             line: 24
             column: 5
-            file: fail.js
+            file: fail.cjs
             type: Test
           stack: |
-            Test.<anonymous> (fail.js:24:5)
-            Test.<anonymous> (fail.js:23:10)
+            Test.<anonymous> (fail.cjs:24:5)
+            Test.<anonymous> (fail.cjs:23:10)
           source: |
             	await t.test('fail a1', async t => {
             		t.fail('hello a1');
@@ -114,25 +114,25 @@ not ok 4 - fail 4 # time=2.715ms
         
         1..1
         # failed 1 test
-    not ok 1 - fail a1 # time=4.487ms
+    not ok 1 - fail a1 # time=2.833ms
     
     1..1
     # failed 1 test
-not ok 5 - fail a # time=7.341ms
+not ok 5 - fail a # time=3.93ms
 
 # Subtest: fail b
     # Subtest: fail b2
         not ok 1 - (unnamed test)
           ---
           stack: |
-            Test.<anonymous> (fail.js:29:10)
+            Test.<anonymous> (fail.cjs:29:10)
           error: hello b2
           tapCaught: returnedPromiseRejection
           test: fail b2
           at:
             line: 29
             column: 10
-            file: fail.js
+            file: fail.cjs
             function: Test.<anonymous>
           source: |
             t.test('fail b', async t => {
@@ -144,22 +144,22 @@ not ok 5 - fail a # time=7.341ms
         
         1..1
         # failed 1 test
-    not ok 1 - fail b2 # time=3.117ms
+    not ok 1 - fail b2 # time=2.659ms
     
     1..1
     # failed 1 test
-not ok 6 - fail b # time=4.834ms
+not ok 6 - fail b # time=3.59ms
 
 # Subtest: fail c
     # Subtest: fail c3
         not ok 1 - hello c3
           ---
           stack: |
-            Test.<anonymous> (fail.js:36:9)
+            Test.<anonymous> (fail.cjs:36:9)
           at:
             line: 36
             column: 9
-            file: fail.js
+            file: fail.cjs
             function: Test.<anonymous>
           tapCaught: returnedPromiseRejection
           test: fail c3
@@ -173,11 +173,11 @@ not ok 6 - fail b # time=4.834ms
         
         1..1
         # failed 1 test
-    not ok 1 - fail c3 # time=3.265ms
+    not ok 1 - fail c3 # time=2.849ms
     
     1..1
     # failed 1 test
-not ok 7 - fail c # time=4.991ms
+not ok 7 - fail c # time=3.775ms
 
 # Subtest: fail d
     1..1
@@ -185,11 +185,11 @@ not ok 7 - fail c # time=4.991ms
         not ok 1 - hello d4
           ---
           stack: |
-            Test.<anonymous> (fail.js:44:9)
+            Test.<anonymous> (fail.cjs:44:9)
           at:
             line: 44
             column: 9
-            file: fail.js
+            file: fail.cjs
             function: Test.<anonymous>
           tapCaught: testFunctionThrow
           test: fail d4
@@ -203,10 +203,10 @@ not ok 7 - fail c # time=4.991ms
         
         1..1
         # failed 1 test
-    not ok 1 - fail d4 # time=3.514ms
+    not ok 1 - fail d4 # time=3.111ms
     
     # failed 1 test
-not ok 8 - fail d # time=5.382ms
+not ok 8 - fail d # time=4.16ms
 
 # Subtest
     not ok 1 - unnamed test
@@ -214,10 +214,10 @@ not ok 8 - fail d # time=5.382ms
       at:
         line: 49
         column: 4
-        file: fail.js
+        file: fail.cjs
         type: Test
       stack: |
-        Test.<anonymous> (fail.js:49:4)
+        Test.<anonymous> (fail.cjs:49:4)
       source: |
         t.test(async t => {
         	t.fail('unnamed test');
@@ -227,8 +227,8 @@ not ok 8 - fail d # time=5.382ms
     
     1..1
     # failed 1 test
-not ok 9 # time=2.583ms
+not ok 9 # time=3.69ms
 
 1..9
 # failed 9 of 9 tests
-# time=58.64ms
+# time=54.891ms

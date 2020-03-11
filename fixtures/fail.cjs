@@ -1,7 +1,7 @@
 'use strict';
 /* eslint no-throw-literal: 0 */
 
-const t = require('./libtap.js');
+const t = require('./libtap.cjs');
 
 t.test('fail 1', async t => {
 	t.fail('hello 1');

@@ -3,29 +3,29 @@ TAP version 13
     # Subtest: pass 1a
         ok 1 - hello 1a
         1..1
-    ok 1 - pass 1a # time=4.294ms
+    ok 1 - pass 1a # time=3.138ms
     
     ok 2 - hello 1
     1..2
-ok 1 - pass 1 # time=8.665ms
+ok 1 - pass 1 # time=6.017ms
 
 # Subtest: pass 2
     1..0
-ok 2 - pass 2 # time=0.351ms
+ok 2 - pass 2 # time=0.282ms
 
 # Subtest: pass 3
     ok 1 - should be equal
     ok 2 - should be equal
     1..2
-ok 3 - pass 3 # time=0.62ms
+ok 3 - pass 3 # time=0.564ms
 
 # Subtest: pass 4
     # Subtest: pass 4a
         1..0
-    ok 1 - pass 4a # time=0.346ms
+    ok 1 - pass 4a # time=0.315ms
     
     1..1
-ok 4 - pass 4 # time=2.229ms
+ok 4 - pass 4 # time=1.328ms
 
 1..4
-# time=15.346ms
+# time=11.332ms

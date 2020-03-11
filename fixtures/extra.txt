@@ -4,7 +4,7 @@ extra 2
 # Subtest: extra
     ok 1 - (unnamed test)
     1..1
-ok 1 - extra # time=2.883ms
+ok 1 - extra # time=2.585ms
 
 1..1
-# time=6.369ms
+# time=6.227ms

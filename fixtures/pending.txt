@@ -4,4 +4,4 @@ ok 2 - skip # SKIP
 1..2
 # todo: 1
 # skip: 1
-# time=3.148ms
+# time=3.536ms

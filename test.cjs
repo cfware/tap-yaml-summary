@@ -7,7 +7,7 @@ const {PassThrough} = require('stream');
 const {promisify} = require('util');
 const {test} = require('libtap');
 
-const reporter = require.resolve('./bin.js');
+const reporter = require.resolve('./bin.cjs');
 const testInput = name => path.join(__dirname, 'fixtures', `${name}.txt`);
 const delay = promisify(setTimeout);
 
@@ -24,13 +24,13 @@ function runSpawn(t, inputStream, expectStatus) {
 		proc.on('error', reject);
 		proc.on('close', status => {
 			t.equal(status, expectStatus);
-			let stdoutStr = Buffer.concat(stdout).toString();
+			let stdoutString = Buffer.concat(stdout).toString();
 			if (t.name.startsWith('bail')) {
 				// The tap bailout does not specify timing so it fluctuates.
-				stdoutStr = stdoutStr.replace(/duration: \d*/, 'duration: removed');
+				stdoutString = stdoutString.replace(/duration: \d*/u, 'duration: removed');
 			}
 
-			t.matchSnapshot(stdoutStr, 'stdout');
+			t.matchSnapshot(stdoutString, 'stdout');
 			t.equal(Buffer.concat(stderr).toString(), '');
 
 			resolve();

@@ -1,6 +1,6 @@
 'use strict';
 
-const t = require('./libtap.js');
+const t = require('./libtap.cjs');
 
 t.test('pass 1', async t => {
 	await t.test('pass 1a', async t => {

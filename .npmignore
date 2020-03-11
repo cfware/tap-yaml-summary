@@ -4,5 +4,5 @@
 coverage/
 fixtures/
 tap-snapshots/
-nyc.config.js
-test.js
+nyc.config.cjs
+test.cjs

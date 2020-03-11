@@ -12,7 +12,7 @@ class Suite {
 }
 
 // $1 = number, $2 = units
-const timere = /^#\s*time=(?<number>(?:0|[1-9]\d*?)(?:\.\d+)?)(?<units>ms|s)?$/;
+const timere = /^#\s*time=(?<number>(?:0|[1-9]\d*?)(?:\.\d+)?)(?<units>ms|s)?$/u;
 const cwd = path.join(process.cwd(), '/');
 
 class Runner extends MiniPass {
@@ -64,7 +64,8 @@ class Runner extends MiniPass {
 			results.failures = failures.map(result => {
 				if (result.diag && result.diag.stack) {
 					result.diag.stack = result.diag.stack.split('\n')
-						.map(l => l.trim().replace(cwd, '')).join('\n');
+						.map(l => l.trim().replace(cwd, ''))
+						.join('\n');
 				}
 
 				return result;
@@ -106,10 +107,10 @@ class Runner extends MiniPass {
 		parser.name = parser.name || '';
 		parser.doingChild = null;
 
-		parser.on('complete', res => {
-			if (!res.ok) {
-				const {count} = res;
-				const plan = res.plan.end - res.plan.start + 1;
+		parser.on('complete', result => {
+			if (!result.ok) {
+				const {count} = result;
+				const plan = result.plan.end - result.plan.start + 1;
 				if (count === plan) {
 					// Probably handled on child parser
 					return;
@@ -138,7 +139,11 @@ class Runner extends MiniPass {
 
 		// Just dump all non-parsing stuff
 		parser.on('extra', c => {
-			super.write(c.split('\n').map(l => l ? `> ${l}` : l).join('\n'));
+			super.write(
+				c.split('\n')
+					.map(l => l ? `> ${l}` : l)
+					.join('\n')
+			);
 		});
 
 		parser.on('assert', result => {
@@ -196,7 +201,11 @@ class Runner extends MiniPass {
 		];
 
 		streamEvents.forEach(ev => {
-			parser.on(ev, /* istanbul ignore next */(...args) => this.emit(ev, ...args));
+			parser.on(
+				ev,
+				/* istanbul ignore next */
+				(...args) => this.emit(ev, ...args)
+			);
 		});
 	}
 

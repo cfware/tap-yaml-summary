@@ -1,10 +1,10 @@
 'use strict';
 
-const t = require('./libtap.js');
+const t = require('./libtap.cjs');
 
 t.test('uncaught', t => {
 	t.ok(true);
-	t.done();
+	t.end();
 
 	setTimeout(() => {
 		throw new Error('uncaught error');

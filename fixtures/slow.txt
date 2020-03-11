@@ -2,7 +2,7 @@ TAP version 13
 # Subtest: delay
     ok 1 - delay complete
     1..1
-ok 1 - delay # time=1258.191ms
+ok 1 - delay # time=1257.968ms
 
 1..1
-# time=1261.572ms
+# time=1261.186ms

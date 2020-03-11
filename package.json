@@ -4,6 +4,7 @@
   "description": "Output a summary in YAML format from a TAP stream",
   "main": "index.cjs",
   "bin": "bin.cjs",
+  "exports": "./index.cjs",
   "scripts": {
     "pretest": "cfware-lint .",
     "test": "nyc --silent=true node ./test.cjs | node ./bin.cjs",
@@ -33,6 +34,7 @@
     "@cfware/nyc": "^0.6.0",
     "cross-env": "^7.0.0",
     "libtap": "^0.3.0",
-    "nyc": "^15.0.0"
+    "nyc": "^15.0.0",
+    "semver": "^7.1.3"
   }
 }

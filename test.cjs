@@ -6,6 +6,7 @@ const cp = require('child_process');
 const {PassThrough} = require('stream');
 const {promisify} = require('util');
 const {test} = require('libtap');
+const semver = require('semver');
 
 const reporter = require.resolve('./bin.cjs');
 const testInput = name => path.join(__dirname, 'fixtures', `${name}.txt`);
@@ -72,3 +73,12 @@ test('slow stdin', async t => {
 
 	await promise;
 });
+
+if (semver.gte(process.versions.node, '13.10.0')) {
+	test('test exports', async t => {
+		const index = require('./index.cjs');
+		const selfRef = require('tap-yaml-summary');
+
+		t.equal(index, selfRef);
+	});
+}

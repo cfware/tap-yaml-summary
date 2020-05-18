@@ -1,40 +1,41 @@
 {
-  "name": "tap-yaml-summary",
-  "version": "0.1.0",
-  "description": "Output a summary in YAML format from a TAP stream",
-  "main": "index.cjs",
-  "bin": "bin.cjs",
-  "exports": "./index.cjs",
-  "scripts": {
-    "pretest": "cfware-lint .",
-    "test": "nyc --silent=true node ./test.cjs | node ./bin.cjs",
-    "posttest": "nyc report --check-coverage=true",
-    "snap": "cross-env TAP_SNAPSHOT=1 npm test"
-  },
-  "engines": {
-    "node": ">=10"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cfware/tap-yaml-summary"
-  },
-  "author": "Corey Farrell <git@cfware.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cfware/tap-yaml-summary/issues"
-  },
-  "homepage": "https://npm.im/tap-yaml-summary",
-  "dependencies": {
-    "minipass": "^3.1.1",
-    "tap-parser": "^10.0.1",
-    "tap-yaml": "^1.0.0"
-  },
-  "devDependencies": {
-    "@cfware/lint": "^1.0.0",
-    "@cfware/nyc": "^0.6.0",
-    "cross-env": "^7.0.0",
-    "libtap": "^0.3.0",
-    "nyc": "^15.0.0",
-    "semver": "^7.1.3"
-  }
+	"name": "tap-yaml-summary",
+	"version": "0.1.0",
+	"description": "Output a summary in YAML format from a TAP stream",
+	"main": "index.cjs",
+	"bin": "bin.cjs",
+	"exports": "./index.cjs",
+	"scripts": {
+		"pretest": "cfware-lint .",
+		"tests-only": "nyc -s node ./test.cjs | node ./bin.cjs",
+		"test": "npm run -s tests-only",
+		"posttest": "nyc report --check-coverage=true",
+		"snap": "cross-env TAP_SNAPSHOT=1 npm test"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cfware/tap-yaml-summary"
+	},
+	"author": "Corey Farrell <git@cfware.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/cfware/tap-yaml-summary/issues"
+	},
+	"homepage": "https://npm.im/tap-yaml-summary",
+	"dependencies": {
+		"minipass": "^3.1.1",
+		"tap-parser": "^10.0.1",
+		"tap-yaml": "^1.0.0"
+	},
+	"devDependencies": {
+		"@cfware/lint": "^1.0.0",
+		"@cfware/nyc": "^0.7.0",
+		"cross-env": "^7.0.0",
+		"libtap": "^0.3.0",
+		"nyc": "^15.0.0",
+		"semver": "^7.1.3"
+	}
 }

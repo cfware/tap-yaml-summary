@@ -1,6 +1,4 @@
 *.tgz
-.travis.yml
-.nyc_output/
 coverage/
 fixtures/
 tap-snapshots/

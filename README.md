@@ -1,10 +1,4 @@
-# tap-yaml-summary
-
-[![Travis CI][travis-image]][travis-url]
-[![Greenkeeper badge][gk-image]](https://greenkeeper.io/)
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![MIT][license-image]](LICENSE)
+# tap-yaml-summary [![NPM Version][npm-image]][npm-url]
 
 Output a summary in YAML format from a TAP stream
 
@@ -39,9 +33,3 @@ This was based on `tap-mocha-reporter`.
 
 [npm-image]: https://img.shields.io/npm/v/tap-yaml-summary.svg
 [npm-url]: https://npmjs.org/package/tap-yaml-summary
-[travis-image]: https://travis-ci.org/cfware/tap-yaml-summary.svg?branch=master
-[travis-url]: https://travis-ci.org/cfware/tap-yaml-summary
-[gk-image]: https://badges.greenkeeper.io/cfware/tap-yaml-summary.svg
-[downloads-image]: https://img.shields.io/npm/dm/tap-yaml-summary.svg
-[downloads-url]: https://npmjs.org/package/tap-yaml-summary
-[license-image]: https://img.shields.io/npm/l/tap-yaml-summary.svg

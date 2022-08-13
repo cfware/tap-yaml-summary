@@ -200,11 +200,11 @@ class Runner extends MiniPass {
 			'pipe', 'prefinish', 'finish', 'unpipe', 'close'
 		];
 
-		streamEvents.forEach(ev => {
+		streamEvents.forEach(event => {
 			parser.on(
-				ev,
+				event,
 				/* istanbul ignore next */
-				(...args) => this.emit(ev, ...args)
+				(...args) => this.emit(event, ...args)
 			);
 		});
 	}

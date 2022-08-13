@@ -31,7 +31,7 @@
 		"tap-yaml": "^1.0.0"
 	},
 	"devDependencies": {
-		"@cfware/lint": "^2.0.6",
+		"@cfware/lint": "^3.0.0",
 		"@cfware/nyc": "^0.7.1",
 		"cross-env": "^7.0.3",
 		"libtap": "^1.4.0",

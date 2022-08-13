@@ -1,6 +1,6 @@
 'use strict';
 
-const {promisify} = require('util');
+const {promisify} = require('node:util');
 const t = require('./libtap.cjs');
 
 const delay = promisify(setTimeout);

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const path = require('path');
-const {readFileSync, createReadStream} = require('fs');
-const cp = require('child_process');
-const {PassThrough} = require('stream');
-const {promisify} = require('util');
+const path = require('node:path');
+const {readFileSync, createReadStream} = require('node:fs');
+const cp = require('node:child_process');
+const {PassThrough} = require('node:stream');
+const {promisify} = require('node:util');
 const {test} = require('libtap');
 const semver = require('semver');
 

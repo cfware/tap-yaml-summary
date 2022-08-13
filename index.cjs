@@ -1,6 +1,6 @@
 'use strict';
 
-const path = require('path');
+const path = require('node:path');
 const MiniPass = require('minipass');
 const Parser = require('tap-parser');
 const yaml = require('tap-yaml');
@@ -28,15 +28,15 @@ class Runner extends MiniPass {
 		};
 
 		this.parser.on('complete', () => {
-			const {stats} = this;
+			const {stats, ok} = this;
 
 			if (!stats.duration) {
-				stats.duration = new Date() - stats.start;
+				stats.duration = Date.now() - stats.start;
 			}
 
 			this.report();
 			super.end();
-			if (!this.ok) {
+			if (!ok) {
 				this.emit('error');
 			}
 		});
@@ -153,13 +153,11 @@ class Runner extends MiniPass {
 			// UNLESS, there were no other asserts, AND it's root level
 			if (parser.doingChild) {
 				const {suite, name} = parser.doingChild;
-				if (suite && name === result.name) {
-					// If it's ok so far, but the ending result is not-ok, then
-					// that means that it exited non-zero.  Emit the test so
-					// that we can print it as a failure.
-					if (suite.ok && !result.ok) {
-						this.emitTest(parser, result);
-					}
+				// If it's ok so far, but the ending result is not-ok, then
+				// that means that it exited non-zero.  Emit the test so
+				// that we can print it as a failure.
+				if (suite && name === result.name && suite.ok && !result.ok) {
+					this.emitTest(parser, result);
 				}
 
 				let emitOn = parser;
@@ -200,13 +198,13 @@ class Runner extends MiniPass {
 			'pipe', 'prefinish', 'finish', 'unpipe', 'close'
 		];
 
-		streamEvents.forEach(event => {
+		for (const event of streamEvents) {
 			parser.on(
 				event,
 				/* istanbul ignore next */
 				(...args) => this.emit(event, ...args)
 			);
-		});
+		}
 	}
 
 	emitSuite(parser) {

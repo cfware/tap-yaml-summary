@@ -1,6 +1,6 @@
 {
 	"name": "tap-yaml-summary",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Output a summary in YAML format from a TAP stream",
 	"main": "index.cjs",
 	"bin": "bin.cjs",
